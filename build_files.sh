@@ -7,7 +7,7 @@
 
 # Update pip
 echo "Updating pip..."
-python3.12 pip install -U pip
+python3.10 pip install -U pip
 
 # Install dependencies
 
