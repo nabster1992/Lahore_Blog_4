@@ -12,7 +12,7 @@ python3.12 pip install -U pip
 # Install dependencies
 
 echo "Installing project dependencies..."
-python3.12 -m pip install -r requirements.txt
+python3.10 -m pip install -r requirements.txt
 
 # Make migrations
 echo "Making migrations..."
