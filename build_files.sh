@@ -3,7 +3,7 @@
 #  python3.11 manage.py collectstatic --noinput --clear
 #  echo "BUILD END"
 
-#!/bin/bash
+!/bin/bash
 
 # Update pip
 echo "Updating pip..."
