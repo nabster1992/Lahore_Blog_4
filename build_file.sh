@@ -1,5 +1,5 @@
- echo "BUILD START"
- python3.9 -m pip install -r requirements.txt
- python3.9 manage.py collectstatic --noinput --clear
- echo "BUILD END"
-
+echo "BUILD START"
+export PYTHON=python3.9
+$PYTHON -m pip install -r requirements.txt
+$PYTHON manage.py collectstatic --noinput --clear
+echo "BUILD END"
