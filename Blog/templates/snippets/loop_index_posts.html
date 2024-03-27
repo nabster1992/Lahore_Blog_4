@@ -1,0 +1,27 @@
+<fade-in class="opacity-0" _="on load transition my opacity to 1 over 0.3 seconds">
+
+{% for post in posts %}
+{% include 'Blog/partials/posts.html' %}
+
+{% endfor %}
+ <!-- START PROMO BLOCK -->
+ <section class="hero is-info is-bold is-small promo-block">
+    <div class="hero-body-2">
+        <div class="container">
+            <h1 class="title">
+                <i class="fa fa-bell-o"></i> There are many things to discover in Lahore</h1>
+            <span class="tag is-black is-medium is-rounded">
+                    Anarkali Historical District
+                </span>
+        </div>
+    </div>
+</section>
+
+
+<div hx-get="{% url 'index' %}?page={{ page|add:1 }}"
+    hx-trigger="revealed"
+    hx-target="this"
+    hx-swap="afterend">
+</div>
+</fade-in>
+

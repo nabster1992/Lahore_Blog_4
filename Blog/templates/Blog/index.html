@@ -1,0 +1,24 @@
+{% extends 'Blog/base.html' %}
+
+{% block page_title %}
+<h2>Blog Posts</h2>
+{% endblock page_title %}
+
+{% load static %}
+
+{% block content %}
+{% for post in posts %}
+    {% include 'Blog/partials/posts.html' %}
+{% endfor %}
+<!-- END PROMO BLOCK -->
+
+
+<div hx-get="{% url 'index' %}?page={{ page|add:1 }}"
+    hx-trigger="revealed"
+    hx-target="this"
+    hx-swap="afterend">
+</div>
+
+{% endblock content %}
+
+

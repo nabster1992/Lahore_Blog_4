@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    {% load django_simple_bulma %}{% bulma %}{% font_awesome %} 
+    {% load static %}
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Lahore Lahore Hai</title>
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../images/favicon.png"
+    />
+
+    <link type="text/css" rel="stylesheet" href="{% static 'css/blog.css' %}" />
+  
+  </head>
+
+  <body>
+    <!-- START NAV -->
+    <nav class="navbar is-white">
+      <div class="container">
+        <div class="navbar-brand">
+          <a class="navbar-item" href="{% url 'index' %}" class="logo">
+    <img src="../images/logo.png" alt="Lahore Lahore Hai" />
+          </a>
+          <span class="navbar-burger burger" data-target="navbarMenu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </span>
+        </div>
+        <div id="navbarMenu" class="navbar-menu">
+          <div class="navbar-end">
+            <a href="{% url 'index' %}" class="navbar-item is-active">
+              Latest Posts
+            </a>
+            <a href="{% url 'resturaunts'%}" class="navbar-item">
+              Latest Resturaunts
+            </a>
+            <a href="{% url 'privacy_policy' %}" class="navbar-item">
+              Privacy Policy
+            </a>
+            <a href="{% url 'disclaimer' %}" class="navbar-item">
+              Disclaimer
+            </a>
+            <a href="{% url 'contact_us' %}" class="navbar-item">
+              Contact Us
+            </a>
+
+            <!-- <div class="navbar-item has-dropdown is-hoverable">
+                        <a class="navbar-link">
+                                Account
+                            </a>
+                        <div class="navbar-dropdown">
+                            <a class="navbar-item">
+                                    Dashboard
+                                </a>
+                            <a class="navbar-item">
+                                    Profile
+                                </a>
+                            <a class="navbar-item">
+                                    Settings
+                                </a>
+                            <hr class="navbar-divider">
+                            <div class="navbar-item">
+                                Logout
+                            </div>
+                        </div>
+                    </div> -->
+          </div>
+        </div>
+      </div>
+    </nav>
+    <!-- END NAV -->
+    
+
+    <section class="hero">
+      <div class="hero-body">
+        <div class="container has-text-centered">
+          <a href="{% url 'index' %}">
+            <h1 class="title super-big" style="color: white">Discover</h1>
+            <h1 class="title super-big" style="color: white">Lahore</h1>
+          </a>
+
+          <br />
+          <h3 class="subtitle is-mobile px-5" style="color: white">
+            Lahore Lahore Hai
+          </h3>
+        </div>
+      </div>
+    </section>
+    
+
+    <section class="section">
+      <div class="container">{% block content %}
+        
+        {% endblock %}</div>
+    </section>
+  </body>
+
+  <footer class="footer has-background-info">
+    <section class="section">
+      <div class="container">
+        <div class="columns is-12-desktop is-variable">
+    
+            <div class="column">
+              <div class="content has-text-white">
+                <h2 class="has-text-white">Site Map</h2>
+                <li><a href="{% url 'contact_us' %}" class="has-text-white">Contact Us</a></li>
+                <li><a href="{% url 'disclaimer' %}" class="has-text-white">Disclaimer</a></li>
+                <li><a href="{% url 'privacy_policy' %}" class="has-text-white">Privacy</a></li>
+              </div>
+            </div>
+            <div class="column is-5-desktop">
+                <div class="content">
+                    <h2 class="has-text-white">Social Links</h2>
+                </div>
+            </div>
+          
+            <div class="column">
+              <div class="has-text-white">
+                <p>
+                    ©️ Copyright 2024 Lahore Lahore Hai
+                </p>
+                <p>
+                  Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+                  Debitis, rem deleniti. Illum nulla, voluptate voluptates
+                  consequatur ratione quisquam ut in!
+                </p>
+              </div> 
+            </div>
+
+           
+        </div>
+      </div>
+    </section>
+  </footer>
+<script type="application/javascript" src="{% static 'js/bulma.js' %}"></script>
+<script src="https://unpkg.com/htmx.org@1.9.10" integrity="sha384-D1Kt99CQMDuVetoL1lrYwg5t+9QdHe7NLX/SoJYkXDFfX37iInKRy5xLSi8nO7UC" crossorigin="anonymous"></script>
+</html>

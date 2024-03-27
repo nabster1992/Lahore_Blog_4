@@ -1,0 +1,82 @@
+{% extends 'Blog/base.html' %} {% block content %}
+{% load static %}
+<div class="card article">
+  <div class="card-content mb-5">
+    <div class="media-center">
+      <figure>
+        <img src="{% if post.image %}
+                            {{ post.image.url }}
+                            {% else %}https://via.placeholder.com/240x240.jpeg
+                            {% endif %}" alt="">
+      </figure>
+    </div>
+    <h1 class="title">{{ post.title }}</h1>
+    
+    <small>Posted at {{ post.date_added }}</small>
+    
+    <p><strong>{{ post.intro }}</strong></p>
+    
+    <p>{{ post.body }}</p>
+    
+    <a href="{% url 'index' %}">Main</a>
+  </div>
+</div>
+
+<hr>
+
+<div class="column is-5">
+  <div class="message is-link">
+    <div  class="message-header">
+        <h2 class="subtitle">
+          <strong style="color: white;" class="has-text-centered" >Comments</strong>
+        </h2>
+      
+    </div>
+  </div>
+
+  {% for comment in post.comments.all %}
+    <article>
+      <div class="media-content">
+        <div class="content">
+          <p>
+            <strong>{{ comment.name }}</strong>
+            <small>{{ comment.date_added }}</small>
+            <br>
+            {{ comment.body }}
+          </p>
+        </div>
+      </div>
+    </article>
+  {% empty %}
+  <div class="notification">
+    <p>No comments yet!</p>
+  </div>
+  {% endfor %}
+</div>
+
+<hr>
+
+<div class="column is-4">
+  <h2 class="subtitle">Add comment</h2>
+  <form method="Post" action="{% url 'blog_detail' pk=post.pk %}">
+    {% csrf_token %}
+    <div class="field">
+      <label class="label">Your name</label>
+      <div class="control">{{ form.name }}</div>
+    </div>
+    <div class="field">
+      <label class="label">Comment</label>
+      <div class="control">{{ form.body }}</div>
+    </div>
+
+    <div class="field">
+      <div class="control">
+        <button type="submit" class="button is-primary mt-4 mb-5">
+          Submit
+        </button>
+      </div>
+    </div>
+  </form>
+</div>
+
+{% endblock %}
