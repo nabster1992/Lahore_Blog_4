@@ -1,7 +1,7 @@
 {
     "builds": [
       {
-        "src": "Lahore_Blog_4/wsgi.py",
+        "src": "Lahore_Blog/wsgi.py",
         "use": "@vercel/python",
         "config": {
           "maxLambdaSize": "15mb",
@@ -17,7 +17,7 @@
       },
       {
         "src": "/(.*)",
-        "dest": "Lahore_Blog_4/wsgi.py"
+        "dest": "Lahore_Blog/wsgi.py"
       }
     ]
   }
